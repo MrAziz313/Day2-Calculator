@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Calculator</title>
+</head>
+<body>
+    <h1 id="heading">Simple Calculator</h1>
+    <div id="firstDiv">
+        <input id="input1" placeholder="First Number" type="number">
+        <input id="input2" placeholder="First Number" type="number">
+       <select  id="selectOperator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+       </select>
+        <button id="btn">Calculator</button>
+       <h2 id="res">Result:0</h2>
+    </div>
+      
+
+    <script>
+        let selectOperator=document.getElementById('selectOperator');
+
+        let firstDiv =document.getElementById('firstDiv');
+        firstDiv.style.textAlign="center";
+
+        let heading =document.getElementById('heading');
+        heading.style.textAlign="center";
+        let input1 = document.getElementById('input1');
+        input1.style.padding='10px' 
+        let input2 = document.getElementById('input2');
+        input2.style.padding='10px' 
+        let btn = document.getElementById('btn');
+        btn.style.backgroundColor='green';
+        btn.style.padding='10px';
+        btn.style.color='white';
+        btn.style.border='none';
+        let res=document.getElementById('res');
+      
+        btn.addEventListener('click',()=>{
+            let f1 = Number(input1.value);
+                let f2 = Number(input2.value);
+               
+            if(selectOperator.value == "+"){
+               let result = f1 + f2;
+                res.innerText = `Result: ${result}`;
+            }else if(selectOperator.value == "-"){
+               let result = f1 - f2;
+                res.innerText = `Result: ${result}`;
+            }else if(selectOperator.value == "*"){
+               let result = f1 * f2;
+                res.innerText = `Result: ${result}`;
+            }
+            else if(selectOperator.value == "/"){
+               let result = f1 / f2;
+                res.innerText = `Result: ${result}`;
+            }
+            
+        })        
+    </script>
+</body>
+</html>
